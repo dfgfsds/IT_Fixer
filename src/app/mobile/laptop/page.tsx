@@ -1,8 +1,9 @@
 "use client";
 
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import LaptopService from "@/components/Mobile/LaptopService";
 import MostBookedServices from "@/components/Mobile/MostBookedServices";
+import NavMobileFooter from "@/components/Mobile/NavMobileFooter";
 import NewAndNoteworthy from "@/components/Mobile/NewAndNoteworthy";
 import PcLaptopRepairServices from "@/components/Mobile/PcLaptopRepairServices";
 import ServiceGrid from "@/components/Mobile/ServiceGrid";
@@ -65,7 +66,7 @@ export default function LaptopIndex() {
             <MostBookedServices />
             <LaptopService />
             <PcLaptopRepairServices />
-            <Footer />
+            <NavMobileFooter />
         </div>
     );
 }

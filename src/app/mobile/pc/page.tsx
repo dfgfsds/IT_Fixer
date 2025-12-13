@@ -7,8 +7,9 @@ import NewAndNoteworthy from "@/components/Mobile/NewAndNoteworthy";
 import MostBookedServices from "@/components/Mobile/MostBookedServices";
 import PcServices from "@/components/Mobile/PcServices";
 import LaptopService from "@/components/Mobile/LaptopService";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import PcLaptopRepairServices from "@/components/Mobile/PcLaptopRepairServices";
+import NavMobileFooter from "@/components/Mobile/NavMobileFooter";
 
 const services = [
   {
@@ -127,7 +128,7 @@ export default function PcIndex() {
             <PcServices />
             {/* <LaptopService /> */}
             <PcLaptopRepairServices />
-            <Footer />
+            <NavMobileFooter />
         </div>
     );
 }

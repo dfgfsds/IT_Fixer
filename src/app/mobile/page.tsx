@@ -6,7 +6,8 @@ import MostBookedServices from "@/components/Mobile/MostBookedServices";
 import PcServices from "@/components/Mobile/PcServices";
 import LaptopService from "@/components/Mobile/LaptopService";
 import PcLaptopRepairServices from "@/components/Mobile/PcLaptopRepairServices";
-import Footer from "@/components/Footer";
+import NavMobileFooter from "@/components/Mobile/NavMobileFooter";
+
 
 
 export default function Mobile() {
@@ -22,7 +23,7 @@ export default function Mobile() {
             <PcServices />
             <LaptopService />
             <PcLaptopRepairServices />
-            <Footer />
+            <NavMobileFooter />
             {/* <main className="pt-[420px] overflow-y-auto">
         <CartPage />
       </main> */}
