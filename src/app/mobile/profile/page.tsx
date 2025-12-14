@@ -27,7 +27,7 @@ export default function ProfilePage() {
         </p>
 
         {/* Button */}
-        <Link href="/profile/login">
+        <Link href="profile/login">
           <button className="w-full bg-[#6E42E5] text-white py-3 rounded-xl text-[15px] font-medium hover:bg-[#5c36d4] transition">
             Log in or sign up
           </button>
