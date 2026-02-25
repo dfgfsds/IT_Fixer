@@ -76,61 +76,61 @@ function NavBar() {
 
   /* ---------------- SUB COMPONENTS ---------------- */
 
-const UserLoginButton = () => {
-  const [open, setOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
+  const UserLoginButton = () => {
+    const [open, setOpen] = useState(false);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      // 🔥 Ignore click on button itself
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        // 🔥 Ignore click on button itself
+        if (
+          wrapperRef.current &&
+          !wrapperRef.current.contains(event.target as Node)
+        ) {
+          setOpen(false);
+        }
+      };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
-  return (
-    <div ref={wrapperRef} className="relative hidden md:block">
-      {/* User Icon */}
-      <div
-        ref={buttonRef}
-        onClick={(e) => {
-          e.stopPropagation(); // 🔥 VERY IMPORTANT
-          setOpen((prev) => !prev);
-        }}
-        className="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200"
-      >
-        <BiUserCircle className="w-6 h-6 text-gray-600" />
-      </div>
-
-      {/* Dropdown */}
-      {open && (
+    return (
+      <div ref={wrapperRef} className="relative hidden md:block">
+        {/* User Icon */}
         <div
-          className="absolute right-0 mt-3 w-32 bg-white rounded-lg shadow-xl z-50 border"
-          onClick={(e) => e.stopPropagation()} // 🔥 prevent auto close
+          ref={buttonRef}
+          onClick={(e) => {
+            e.stopPropagation(); // 🔥 VERY IMPORTANT
+            setOpen((prev) => !prev);
+          }}
+          className="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200"
         >
-          <div
-            className="px-4 py-2 text-sm font-semibold text-gray-700  cursor-pointer"
-            onClick={() => {
-              setOpen(false);
-              // router.push('/login');
-          setShowModal(!showModal)
-            }}
-          >
-            Login
-          </div>
+          <BiUserCircle className="w-6 h-6 text-gray-600" />
         </div>
-      )}
-    </div>
-  );
-};
+
+        {/* Dropdown */}
+        {open && (
+          <div
+            className="absolute right-0 mt-3 w-32 bg-white rounded-lg shadow-xl z-50 border"
+            onClick={(e) => e.stopPropagation()} // 🔥 prevent auto close
+          >
+            <div
+              className="px-4 py-2 text-sm font-semibold text-gray-700  cursor-pointer"
+              onClick={() => {
+                setOpen(false);
+                // router.push('/login');
+                setShowModal(!showModal)
+              }}
+            >
+              Login
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const LocationInput: React.FC<LocationInputProps> = ({
     locality = 'Nungambakkam',
@@ -144,7 +144,7 @@ const UserLoginButton = () => {
         <FiMapPin className="w-5 h-5 mt-1 mr-2 text-gray-700" />
         <div className="truncate flex items-center-safe">
           <p className="text-xl font-semibold text-gray-900">{locality}</p>
-            <FiChevronDown className="w-4 h-4 ml-1 text-gray-600" />
+          <FiChevronDown className="w-4 h-4 ml-1 text-gray-600" />
           {/* <div className="flex items-center">
             <p className="text-sm text-gray-600 truncate">{city}</p>
             <FiChevronDown className="w-4 h-4 ml-1 text-gray-600" />
@@ -210,7 +210,7 @@ const UserLoginButton = () => {
               <LocationInput />
               <div className="flex items-center gap-2">
                 <button
-                  onClick={() => handleNavClick('/cart')}
+                  onClick={() => handleNavClick('/desktop/cart')}
                   className="relative w-10 h-10 flex items-center justify-center rounded-full bg-gray-100"
                 >
                   <BiCart className="w-6 h-6" />
@@ -252,7 +252,7 @@ const UserLoginButton = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <button onClick={() => handleNavClick('/cart')}>
+            <button onClick={() => handleNavClick('/desktop/cart')}>
               <BiCart className="w-6 h-6 text-gray-600" />
             </button>
             <UserLoginButton />
